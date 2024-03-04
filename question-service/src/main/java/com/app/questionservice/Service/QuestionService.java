@@ -17,12 +17,8 @@ import java.util.List;
 
 @Service
 public class QuestionService {
-//    @Autowired private
-
-    QuestionRepo questionRepo;
-    public QuestionService(QuestionRepo questionRepo) {
-        this.questionRepo = questionRepo;
-    }
+    @Autowired
+    private QuestionRepo questionRepo;
 
     public String addQuestion(Question question) {
         questionRepo.save(question);
@@ -49,7 +45,7 @@ public class QuestionService {
     public ResponseEntity<List<QuestionWrapper>> getQuestionFromId(List<Integer> questionIds) {
         // we're just getting the data and setting it from database.
         List<QuestionWrapper> wrappers = new ArrayList<>();
-        for(int id : questionIds){
+        for (int id : questionIds) {
             Question question = questionRepo.findById(id).get();
             QuestionWrapper set = new QuestionWrapper(question.getId(), question.getQuestionTitle(),
                     question.getOption1(), question.getOption2(), question.getOption3(), question.getOption4());
@@ -60,10 +56,10 @@ public class QuestionService {
 
     public int getScore(List<Response> ansResponseList) {
         int ansCount = 0;
-        for(Response response : ansResponseList){
+        for (Response response : ansResponseList) {
             Question question = questionRepo.findById(response.getId()).get();
 
-            if(response.getAnsResponse().equals(question.getRightAnswer())){
+            if (response.getAnsResponse().equals(question.getRightAnswer())) {
                 ansCount++;
             }
         }

@@ -1,0 +1,12 @@
+#spring:
+#  main:
+#    allow-circular-references: true
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/questionDB?createTableIfNotExists=True
+#    username: root
+#    password: adminuser
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#server:
+#  port: 15

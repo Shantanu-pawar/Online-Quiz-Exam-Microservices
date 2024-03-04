@@ -18,7 +18,8 @@ import java.util.Optional;
 public class QuizService {
 
     @Autowired private QuizRepository quizRepository;
-    @Autowired private QuestionRepo questionRepo;
+
+//    @Autowired private QuestionRepo questionRepo;
 
     public ResponseEntity<String> createQuiz(String category, int numQuestions, String title) {
 
