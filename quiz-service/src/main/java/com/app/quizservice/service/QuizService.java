@@ -1,6 +1,7 @@
 package com.app.quizservice.service;
 
 import com.app.questionservice.Model.Question;
+import com.app.questionservice.Model.QuestionWrapper;
 import com.app.questionservice.Repository.QuestionRepo;
 import com.app.quizservice.Model.Quiz;
 import com.app.quizservice.Repository.QuizRepository;
@@ -34,22 +35,23 @@ public class QuizService {
 
     }
 
-//    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(Integer id) {
-//        Optional<Quiz> quiz = quizDao.findById(id);
-//        List<Question> questionsFromDB = quiz.get().getQuestions();
+//    public List<QuestionWrapper> getQuizQuestions(Integer id) {
+//        Optional<Quiz> quiz = quizRepository.findById(id);
+//        List<Integer> quesList = quiz.get().getQuestions();
 //        List<QuestionWrapper> questionsForUser = new ArrayList<>();
-//        for(Question q : questionsFromDB){
-//            QuestionWrapper qw = new QuestionWrapper(q.getId(), q.getQuestionTitle(), q.getOption1(), q.getOption2(), q.getOption3(), q.getOption4());
+//        for(int queNo : quesList){
+//
+//            QuestionWrapper qw = new QuestionWrapper(queNo.get(), queNo.getQuestionTitle(), queNo.getOption1(), queNo.getOption2(), queNo.getOption3(), queNo.getOption4());
 //            questionsForUser.add(qw);
 //        }
 //
 //        return new ResponseEntity<>(questionsForUser, HttpStatus.OK);
 //
 //    }
-//
+
 //    public ResponseEntity<Integer> calculateResult(Integer id, List<Response> responses) {
 //        Quiz quiz = quizDao.findById(id).get();
-//        List<Question> questions = quiz.getQuestions();
+//        List<Integer> questions = quiz.getQuestions();
 //        int right = 0;
 //        int i = 0;
 //        for(Response response : responses){
@@ -60,4 +62,6 @@ public class QuizService {
 //        }
 //        return new ResponseEntity<>(right, HttpStatus.OK);
 //    }
+//
+
 }

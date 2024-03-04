@@ -10,4 +10,6 @@ public class QuestionServiceApplication {
 		SpringApplication.run(QuestionServiceApplication.class, args);
 	}
 
+	// define here multiple port instances so that user can make requests on multiple ports
+
 }

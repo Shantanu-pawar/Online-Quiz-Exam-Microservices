@@ -25,7 +25,7 @@ public class QuestionService {
         return "success";
     }
 
-    public List<Question> getAllQuestions(String category) {
+    public List<Question> getAllQuestions() throws RuntimeException{
         List<Question> questionList = questionRepo.findAll();
         return questionList;
     }
@@ -36,10 +36,8 @@ public class QuestionService {
     }
 
     public ResponseEntity<List<Integer>> getQuestionForQuiz(String categoryName, Integer numberOfQuestion) {
-        // return the list of integers
         List<Integer> questions = questionRepo.findRandomQuestionsByCategory(categoryName, numberOfQuestion);
         return new ResponseEntity<>(questions, HttpStatus.OK);
-
     }
 
     public ResponseEntity<List<QuestionWrapper>> getQuestionFromId(List<Integer> questionIds) {

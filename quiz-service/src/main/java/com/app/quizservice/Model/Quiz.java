@@ -18,7 +18,7 @@ public class Quiz {
     private String title;
 
     @ElementCollection
-    private List<Integer> questionIds;
+    private List<Integer> questions;
 
 
 
@@ -38,11 +38,11 @@ public class Quiz {
         this.title = title;
     }
 
-    public List<Integer> getQuestionIds() {
-        return questionIds;
+    public List<Integer> getQuestions() {
+        return questions;
     }
 
-    public void setQuestionIds(List<Integer> questionIds) {
-        this.questionIds = questionIds;
+    public void setQuestions(List<Integer> questions) {
+        this.questions = questions;
     }
 }

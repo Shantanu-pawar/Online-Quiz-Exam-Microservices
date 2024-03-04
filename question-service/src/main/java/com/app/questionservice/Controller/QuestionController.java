@@ -28,9 +28,9 @@ public class QuestionController {
     }
 
     @GetMapping("allQuestions")
-    public ResponseEntity<?> getAllQuestions(@PathVariable String category) {
+    public ResponseEntity<?> getAllQuestions() {
         try {
-            List<Question> list = questionService.getAllQuestions(category);
+            List<Question> list = questionService.getAllQuestions();
             return new ResponseEntity<>(list, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
@@ -44,14 +44,14 @@ public class QuestionController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    // directly getting statusCodes from
+    // return the list of question id's to generate according to category and number of questions input.
     @GetMapping("generate")
     public ResponseEntity<?> getQuestionForQuiz(@RequestParam String categoryName,
                                                 @RequestParam int numberOfQuestion){
         return questionService.getQuestionForQuiz(categoryName, numberOfQuestion);
     }
 
-    @PostMapping("getQuestion")
+    @PostMapping("get-question")
     // API: return questions list based on question id's
     public ResponseEntity<List<QuestionWrapper>> getQuestionFromId
             (@RequestBody List<Integer> questionIds){
