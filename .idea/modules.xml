@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/Telisko-quizMicroservice.iml" filepath="$PROJECT_DIR$/.idea/Telisko-quizMicroservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/question-service/question-service.iml" filepath="$PROJECT_DIR$/question-service/question-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/quiz-service/quiz-service.iml" filepath="$PROJECT_DIR$/quiz-service/quiz-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry.iml" />
     </modules>
   </component>
 </project>

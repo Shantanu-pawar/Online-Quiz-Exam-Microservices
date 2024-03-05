@@ -1,6 +1,8 @@
 package com.app.quizservice.controller;
 import com.app.questionservice.Model.Question;
 import com.app.questionservice.Model.QuestionWrapper;
+import com.app.questionservice.Model.Response;
+import com.app.quizservice.Model.CreateQuizDto;
 import com.app.quizservice.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,13 +17,14 @@ public class QuizController {
     @Autowired private QuizService quizService;
 
     @PostMapping("create")
-    public ResponseEntity<String> createQuiz(@RequestParam String category,
-                                             @RequestParam int numQ, @RequestParam String title){
-        return quizService.createQuiz(category, numQ, title);
+    public ResponseEntity<String> createQuiz(@RequestBody CreateQuizDto dto){
+        return quizService.createQuiz(dto);
     }
 
 
-    // here we're getting all the questions from quiz
+//     here we're getting all the questions from quiz
+
+
 //    @GetMapping("get/{id}")
 //    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
 //        List<QuestionWrapper> list =  quizService.getQuizQuestions(id);

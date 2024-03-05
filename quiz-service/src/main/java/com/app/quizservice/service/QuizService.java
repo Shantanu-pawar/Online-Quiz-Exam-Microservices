@@ -3,6 +3,7 @@ package com.app.quizservice.service;
 import com.app.questionservice.Model.Question;
 import com.app.questionservice.Model.QuestionWrapper;
 import com.app.questionservice.Repository.QuestionRepo;
+import com.app.quizservice.Model.CreateQuizDto;
 import com.app.quizservice.Model.Quiz;
 import com.app.quizservice.Repository.QuizRepository;
 import org.aspectj.weaver.patterns.TypePatternQuestions;
@@ -17,22 +18,17 @@ import java.util.Optional;
 
 @Service
 public class QuizService {
-
     @Autowired private QuizRepository quizRepository;
 
-//    @Autowired private QuestionRepo questionRepo;
-
-    public ResponseEntity<String> createQuiz(String category, int numQuestions, String title) {
-
+    public ResponseEntity<String> createQuiz(CreateQuizDto dto) {
 
         Question quest = new Question();
-//        Quiz quiz = new Quiz();
+//        Quiz quiz = new Quiz(dto.getCategory(), dto.getTitle(), dto.getNumberOfQuestions());
 //        quiz.setTitle(title);
 //        quiz.setQuestions(questions);
 //        quizDao.save(quiz);
 
         return new ResponseEntity<>("Success", HttpStatus.CREATED);
-
     }
 
 //    public List<QuestionWrapper> getQuizQuestions(Integer id) {
