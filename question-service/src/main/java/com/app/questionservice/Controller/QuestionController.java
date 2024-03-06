@@ -5,6 +5,7 @@ import com.app.questionservice.Model.Question;
 import com.app.questionservice.Model.QuestionWrapper;
 import com.app.questionservice.Model.Response;
 import com.app.questionservice.Service.QuestionService;
+import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ import java.util.List;
 @RequestMapping("question")
 public class QuestionController {
     @Autowired private QuestionService questionService;
+
+//    @Autowired Environment environment;
 
     @PostMapping("add")
     public ResponseEntity<String> addQuestion(@RequestBody Question question) {
@@ -46,7 +49,7 @@ public class QuestionController {
 
     // return the list of question id's to generate according to category and number of questions input.
     @GetMapping("generate")
-    public ResponseEntity<?> getQuestionForQuiz(@RequestParam String categoryName,
+    public ResponseEntity<List<Integer>> getQuestionForQuiz(@RequestParam String categoryName,
                                                 @RequestParam int numberOfQuestion){
         return questionService.getQuestionForQuiz(categoryName, numberOfQuestion);
     }
@@ -54,7 +57,10 @@ public class QuestionController {
     @PostMapping("get-question")
     // API: return questions list based on question id's
     public ResponseEntity<List<QuestionWrapper>> getQuestionFromId
-            (@RequestBody List<Integer> questionIds){
+                                                (@RequestBody List<Integer> questionIds){
+
+    // property for getting the port number in the console
+    // System.out.println(environment.getProperty("local.server.port"));
         return questionService.getQuestionFromId(questionIds);
     }
 

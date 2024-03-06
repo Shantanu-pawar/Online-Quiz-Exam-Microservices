@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Telisko-quizMicroservice.iml" filepath="$PROJECT_DIR$/.idea/Telisko-quizMicroservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/question-service/question-service.iml" filepath="$PROJECT_DIR$/question-service/question-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/quiz-service/quiz-service.iml" filepath="$PROJECT_DIR$/quiz-service/quiz-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry.iml" />

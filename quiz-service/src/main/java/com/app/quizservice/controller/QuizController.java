@@ -22,18 +22,16 @@ public class QuizController {
     }
 
 
-//     here we're getting all the questions from quiz
+//  here we're getting all the questions from quiz id using list of questions list
+    @GetMapping("get/{id}")
+    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
+        return quizService.getQuizQuestions(id);
+    }
 
-
-//    @GetMapping("get/{id}")
-//    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable Integer id){
-//        List<QuestionWrapper> list =  quizService.getQuizQuestions(id);
-//        return new ResponseEntity<>(list, HttpStatus.OK);
-//    }
-//
-//    @PostMapping("submit/{id}")
-//    public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> responses){
-//        return quizService.calculateResult(id, responses);
-//    }
+//  here we just want the score after submitting the quiz
+    @PostMapping("submit/{id}")
+    public ResponseEntity<Integer> submitQuiz(@PathVariable Integer id, @RequestBody List<Response> responses){
+        return quizService.calculateResult(id, responses);
+    }
 
 }
