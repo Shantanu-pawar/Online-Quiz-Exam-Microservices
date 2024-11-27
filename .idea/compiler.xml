@@ -8,12 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
-      </profile>
-      <profile name="Disable">
         <module name="quiz-service" />
         <module name="question-service" />
         <module name="service-registry" />
       </profile>
+      <profile name="Disable" />
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="17" />
